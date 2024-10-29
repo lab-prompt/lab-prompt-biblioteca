@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lab.prompt - Experimentos com Prompts</title>
+    <title>lab.prompt - Biblioteca de Prompts</title>
     <style>
         /* Estilos Globais */
         * {
@@ -40,22 +40,23 @@
             margin-bottom: 20px;
             line-height: 1.6;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
+        .menu {
+            text-align: left;
             margin-top: 20px;
-            background-color: #0093ff; /* Azul profundo */
-            color: #f0f0f0;
+        }
+        .menu a {
+            display: block;
+            padding: 10px;
+            color: #0093ff;
             text-decoration: none;
-            font-weight: bold;
+            border: 1px solid #0093ff;
             border-radius: 5px;
+            margin: 5px 0;
             transition: background-color 0.3s ease;
         }
-        .button:hover {
-            background-color: #007acc; /* Azul profundo mais escuro */
-        }
-        .section {
-            margin-top: 40px;
+        .menu a:hover {
+            background-color: #007acc;
+            color: #f0f0f0;
         }
         footer {
             margin-top: 40px;
@@ -67,23 +68,28 @@
 <body>
     <div class="container">
         <h1>lab.prompt</h1>
-        <h2>Experimentos Criativos com Prompts</h2>
+        <h2>Biblioteca de Prompts</h2>
         <p>
-            Bem-vindo ao <strong>lab.prompt</strong>, um espaço onde exploramos e testamos o potencial criativo dos prompts. Aqui, você encontrará dicas, exemplos, e muito mais, com o objetivo de transformar suas ideias em imagens, textos e experiências inovadoras.
+            Explore nossa biblioteca de prompts organizada em categorias para facilitar a navegação. Selecione uma das opções abaixo para acessar o conteúdo desejado diretamente no GitHub.
         </p>
-        <p>
-            Quer aprender a aproveitar o poder dos prompts? Acompanhe nosso conteúdo para dicas exclusivas e inspire-se com experimentos prontos para usar!
-        </p>
-        
-        <div class="section">
-            <h2>Biblioteca de Prompts</h2>
-            <p>
-                Nossa <strong>Biblioteca de Prompts</strong> é organizada em categorias, abrangendo desde utilidades práticas até entretenimento criativo. Cada prompt é pensado para ajudar você a explorar o poder das IAs e expandir suas possibilidades de criação.
-            </p>
-            <p>
-                Acesse a biblioteca para navegar por tópicos como vida pessoal, negócios, programação, criatividade e muito mais. Estamos sempre adicionando novos prompts para inspirar e facilitar seu aprendizado.
-            </p>
-            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/" class="button">Explore a Biblioteca de Prompts</a>
+
+        <!-- Menu com links para as pastas do GitHub -->
+        <div class="menu">
+            <h3>Utilidades</h3>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/utilidades/vida_pessoal">Vida Pessoal</a>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/utilidades/educacao">Educação e Aprendizado</a>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/utilidades/negocios_marketing">Negócios e Marketing</a>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/utilidades/tecnologia_programacao">Tecnologia e Programação</a>
+
+            <h3>Entretenimento</h3>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/entretenimento/musica">Música</a>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/entretenimento/filmes_series">Filmes e Séries</a>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/entretenimento/criatividade_escrita">Criatividade e Escrita</a>
+
+            <h3>Outros</h3>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/outros">Diversos</a>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/outros">Experimental</a>
+            <a href="https://github.com/lab-prompt/lab-prompt-biblioteca/tree/main/outros">Customizáveis</a>
         </div>
         
         <footer>
