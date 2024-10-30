@@ -100,3 +100,18 @@ header {
     cursor: pointer;
     font-weight: bold;
 }
+
+/* Estilo do balão de feedback */
+.feedback {
+    display: none;
+    position: absolute;
+    background-color: #03DAC6;
+    color: #121212;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-top: 5px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
