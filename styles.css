@@ -16,8 +16,8 @@ header {
 }
 
 .menu-toggle {
-    background-color: #BB86FC;
-    color: #FFFFFF;
+    background-color: #03DAC6; /* Verde neon */
+    color: #121212;
     padding: 8px 12px;
     border: none;
     cursor: pointer;
@@ -31,7 +31,7 @@ header {
     position: absolute;
     top: 60px;
     left: 20px;
-    background-color: rgba(30, 30, 30, 0.9);
+    background-color: rgba(3, 218, 198, 0.9); /* Verde neon com opacidade */
     width: 150px;
     border-radius: 8px;
     padding: 10px;
@@ -39,14 +39,15 @@ header {
 }
 
 .nav-link {
-    color: #BB86FC;
+    color: #FFFFFF;
     padding: 10px;
     text-decoration: none;
-    border-bottom: 1px solid #303030;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .nav-link:hover {
-    color: #03DAC6;
+    color: #121212;
+    background-color: #BB86FC; /* Um efeito em azul para o hover */
 }
 
 .container {
