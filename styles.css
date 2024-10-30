@@ -171,13 +171,13 @@ header {
     display: inline-block;
 }
 
-/* Container de filtros abaixo do cabeçalho */
+/* Container de filtros */
 .filter-container {
-    max-width: 800px;
     margin: 20px auto;
     padding: 15px;
-    background-color: rgba(50, 50, 50, 0.9);
+    background-color: rgba(50, 50, 50, 0.9); /* Combina com o estilo do corpo */
     border-radius: 10px;
+    max-width: 800px;
 }
 
 /* Estilo do botão de aplicar filtros */
