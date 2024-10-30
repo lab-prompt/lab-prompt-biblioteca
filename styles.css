@@ -170,3 +170,24 @@ header {
 .copy-btn:active .feedback {
     display: inline-block;
 }
+
+/* Container de filtros com botão de aplicar */
+.filter-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(50, 50, 50, 0.9); /* Cor combinando com o fundo principal */
+    border-radius: 10px;
+}
+
+/* Estilo do botão de aplicar filtros */
+.apply-filters-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #03DAC6;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
