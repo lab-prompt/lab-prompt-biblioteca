@@ -1,4 +1,3 @@
-// Carrega os dados do arquivo JSON
 async function loadPrompts() {
     try {
         const response = await fetch('prompts.json');
@@ -9,7 +8,6 @@ async function loadPrompts() {
     }
 }
 
-// Exibe prompts de uma categoria específica
 async function showCategory(category) {
     const data = await loadPrompts();
     const promptContainer = document.getElementById("promptContainer");
@@ -20,12 +18,13 @@ async function showCategory(category) {
             const promptDiv = document.createElement("div");
             promptDiv.classList.add("prompt");
 
-            const promptTitle = document.createElement("h3");
+            const promptTitle = document.createElement("div");
+            promptTitle.classList.add("prompt-title");
             promptTitle.textContent = prompt.nome;
 
-            const promptDescription = document.createElement("blockquote");
-            promptDescription.classList.add("prompt-description");
-            promptDescription.textContent = prompt.descricao;
+            const promptObjective = document.createElement("p");
+            promptObjective.classList.add("prompt-objective");
+            promptObjective.innerHTML = `<strong>Objetivo:</strong> ${prompt.objetivo}`;
 
             const promptInput = document.createElement("p");
             promptInput.innerHTML = `<strong>Input:</strong> ${prompt.input}`;
@@ -33,20 +32,26 @@ async function showCategory(category) {
             const promptOutput = document.createElement("p");
             promptOutput.innerHTML = `<strong>Output:</strong> ${prompt.output}`;
 
-            const promptObjective = document.createElement("p");
-            promptObjective.innerHTML = `<strong>Objetivo:</strong> ${prompt.objetivo}`;
+            const descriptionBox = document.createElement("div");
+            descriptionBox.classList.add("description-box");
+
+            const promptDescription = document.createElement("p");
+            promptDescription.classList.add("prompt-description");
+            promptDescription.textContent = prompt.descricao;
 
             const copyBtn = document.createElement("button");
             copyBtn.textContent = "Copiar Descrição";
             copyBtn.classList.add("copy-btn");
             copyBtn.onclick = () => copyPrompt(prompt.descricao);
 
+            descriptionBox.appendChild(promptDescription);
+            descriptionBox.appendChild(copyBtn);
+
             promptDiv.appendChild(promptTitle);
             promptDiv.appendChild(promptObjective);
-            promptDiv.appendChild(promptDescription);
             promptDiv.appendChild(promptInput);
             promptDiv.appendChild(promptOutput);
-            promptDiv.appendChild(copyBtn);
+            promptDiv.appendChild(descriptionBox);
 
             promptContainer.appendChild(promptDiv);
         });
@@ -55,7 +60,6 @@ async function showCategory(category) {
     }
 }
 
-// Função para copiar apenas a descrição
 function copyPrompt(text) {
     navigator.clipboard.writeText(text)
         .then(() => alert("Descrição copiada!"))
