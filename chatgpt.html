@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompts - ChatGPT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <a href="index.html" class="home-link"><span>🏠</span> Home</a>
+        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+    </header>
+
+    <!-- Menu em Aba -->
+    <nav class="nav-menu" id="navMenu">
+        <a href="#" class="nav-link">Sobre</a>
+        <a href="#" class="nav-link">Dicas</a>
+        <a href="#" class="nav-link">Prompts</a>
+        <div class="sub-menu">
+            <a href="chatgpt.html" class="nav-link">ChatGPT</a>
+        </div>
+    </nav>
+
+    <!-- Barra Lateral de Filtros -->
+    <aside class="sidebar">
+        <h3>Filtros de Tags</h3>
+        <div class="filter-group">
+            <input type="checkbox" id="criatividade" onclick="filterByTag('Criatividade')">
+            <label for="criatividade">Criatividade</label><br>
+            <input type="checkbox" id="musica" onclick="filterByTag('Música')">
+            <label for="musica">Música</label><br>
+            <input type="checkbox" id="design" onclick="filterByTag('Design')">
+            <label for="design">Design</label>
+        </div>
+
+        <h3>Filtros de Output</h3>
+        <div class="filter-group">
+            <input type="checkbox" id="texto" onclick="filterByOutput('Texto')">
+            <label for="texto">Texto</label><br>
+            <input type="checkbox" id="imagem" onclick="filterByOutput('Imagem')">
+            <label for="imagem">Imagem</label><br>
+            <!-- Inclua mais opções conforme necessário -->
+        </div>
+    </aside>
+
+    <!-- Caixa de Conteúdo -->
+    <main class="container">
+        <h1>Prompts para ChatGPT</h1>
+        <section class="prompt-container" id="promptContainer">
+            <!-- Prompts carregados por JavaScript -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Carregar prompts com as tags e filtros de output
+        displayPrompts(prompts);
+    </script>
+</body>
+</html>
