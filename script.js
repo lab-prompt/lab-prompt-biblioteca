@@ -91,6 +91,10 @@ function copyPrompt(text, button) {
             // Exibe o balão de feedback
             const feedback = button.nextElementSibling;
             feedback.style.display = "inline-block";
+
+            // Define o feedback como posicionado perto do botão
+            feedback.style.position = "relative";
+            feedback.style.left = "10px"; // Ajuste conforme necessário
             
             // Esconde o balão após 2 segundos
             setTimeout(() => {
