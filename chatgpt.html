@@ -26,24 +26,26 @@
         </nav>
     </header>
 
-    <!-- Container de Filtros entre o Cabeçalho e o Corpo -->
-    <div class="filter-container">
-        <h3>Filtros de Tags</h3>
-        <input type="checkbox" id="criatividade" value="Criatividade"> <label for="criatividade">Criatividade</label><br>
-        <input type="checkbox" id="musica" value="Música"> <label for="musica">Música</label><br>
-        <input type="checkbox" id="design" value="Design"> <label for="design">Design</label><br>
-
-        <h3>Filtros de Output</h3>
-        <input type="checkbox" id="texto" value="Texto"> <label for="texto">Texto</label><br>
-        <input type="checkbox" id="imagem" value="Imagem"> <label for="imagem">Imagem</label><br>
-
-        <!-- Botão para aplicar os filtros -->
-        <button class="apply-filters-btn" onclick="applySelectedFilters()">Aplicar Filtros</button>
-    </div>
-
     <!-- Container Principal da Página de Prompts -->
     <div class="container">
         <h1>Prompts para ChatGPT</h1>
+
+        <!-- Container de Filtros dentro do Corpo, entre o título e os prompts -->
+        <div class="filter-container">
+            <h3>Filtros de Tags</h3>
+            <input type="checkbox" id="criatividade" value="Criatividade"> <label for="criatividade">Criatividade</label><br>
+            <input type="checkbox" id="musica" value="Música"> <label for="musica">Música</label><br>
+            <input type="checkbox" id="design" value="Design"> <label for="design">Design</label><br>
+
+            <h3>Filtros de Output</h3>
+            <input type="checkbox" id="texto" value="Texto"> <label for="texto">Texto</label><br>
+            <input type="checkbox" id="imagem" value="Imagem"> <label for="imagem">Imagem</label><br>
+
+            <!-- Botão para aplicar os filtros -->
+            <button class="apply-filters-btn" onclick="applySelectedFilters()">Aplicar Filtros</button>
+        </div>
+
+        <!-- Container onde os prompts serão exibidos -->
         <main class="content" id="promptContainer">
             <!-- Os prompts carregados dinamicamente aparecerão aqui -->
         </main>
