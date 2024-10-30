@@ -10,22 +10,21 @@
 <body>
     <!-- Cabeçalho com botão de menu e ícone de Home -->
     <header>
-        <a href="index.html" class="home-link"><span>🏠</span> Home</a>
-        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
-    </header>
-
-    <!-- Menu em Aba Retrátil -->
-    <nav class="nav-menu" id="navMenu" style="display: none;">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="sobre.html" class="nav-link">Sobre</a>
-        <a href="dicas.html" class="nav-link">Dicas</a>
-        <div class="submenu">
-            <a href="#" class="nav-link">Prompts</a>
-            <div class="dropdown">
-                <a href="chatgpt.html" class="sub-nav-link">ChatGPT</a>
+        <nav class="main-nav">
+            <a href="index.html" class="home-link"><span>🏠</span> Home</a>
+            <a href="#" class="menu-toggle" onclick="toggleMenu()">Menu</a>
+            <div class="nav-menu" id="navMenu" style="display: none;">
+                <a href="sobre.html" class="nav-link">Sobre</a>
+                <a href="dicas.html" class="nav-link">Dicas</a>
+                <div class="submenu">
+                    <a href="#" class="nav-link">Prompts</a>
+                    <div class="dropdown">
+                        <a href="chatgpt.html" class="sub-nav-link">ChatGPT</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Conteúdo Principal -->
     <div class="container">
