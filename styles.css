@@ -10,9 +10,6 @@ body {
 
 /* Cabeçalho fixo no topo */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
     background-color: #282828;
     position: fixed;
@@ -21,30 +18,37 @@ header {
     z-index: 1000;
 }
 
+/* Menu principal ao lado de Home */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
 .home-link {
     text-decoration: none;
     color: #03DAC6;
     font-weight: bold;
     font-size: 1.1em;
+    margin-right: 20px;
 }
 
+/* Botão de menu estilo link */
 .menu-toggle {
-    background-color: #03DAC6;
-    color: #121212;
-    padding: 8px 12px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    color: #03DAC6;
     font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-decoration: none;
 }
 
-/* Menu em Aba Retrátil */
+/* Menu retrátil */
 .nav-menu {
-    display: none; /* Escondido por padrão */
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: 50px; /* Ajustado para aparecer abaixo do cabeçalho */
-    right: 20px;
+    top: 50px;
+    left: 20px;
     background-color: rgba(30, 30, 30, 0.9);
     width: 150px;
     border-radius: 8px;
@@ -52,6 +56,7 @@ header {
     z-index: 1000;
 }
 
+/* Estilo dos links */
 .nav-link, .sub-nav-link {
     color: #FFFFFF;
     padding: 10px;
@@ -62,6 +67,25 @@ header {
 .nav-link:hover, .sub-nav-link:hover {
     color: #121212;
     background-color: #BB86FC;
+}
+
+/* Submenu - ChatGPT aparece somente quando o cursor está sobre "Prompts" */
+.submenu {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 5px 0;
+    border-radius: 8px;
+}
+
+.submenu:hover .dropdown {
+    display: block;
 }
 
 /* Container principal com margem para não ser coberto pelo cabeçalho */
