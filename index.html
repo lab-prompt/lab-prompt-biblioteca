@@ -9,20 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 
     <style>
-        /* Estilo geral do site */
+        /* Estilo geral do site com fundo de tecnologia */
         body {
-            font-family: 'Roboto', sans-serif; /* Fonte principal para o texto */
-            background-color: #121212; /* Carvão escuro */
-            color: #e0e0e0; /* Cinza suave */
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Textura de linhas sutis */
+            color: #e0e0e0;
             margin: 0;
             padding: 20px;
         }
 
         /* Estilo para os títulos */
         h1 {
-            font-family: 'Montserrat', sans-serif; /* Fonte para títulos */
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             color: #03DAC6; /* Verde neon */
+            text-align: center;
         }
 
         /* Menu de categorias */
@@ -39,7 +41,7 @@
         .category {
             padding: 10px;
             cursor: pointer;
-            color: #03DAC6; /* Verde neon */
+            color: #03DAC6;
             font-weight: bold;
         }
 
@@ -60,9 +62,19 @@
         /* Estilo dos prompts */
         .prompt {
             background-color: #1f1f1f;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilo para a descrição destacada */
+        .prompt-description {
+            background-color: #282828; /* Cor diferente para destacar */
+            padding: 10px;
+            border-left: 4px solid #BB86FC; /* Azul profundo para destaque */
+            font-style: italic;
+            margin: 15px 0;
         }
 
         /* Estilo do botão de copiar */
