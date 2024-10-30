@@ -1,3 +1,8 @@
+function toggleMenu() {
+    const navMenu = document.getElementById("navMenu");
+    navMenu.style.display = navMenu.style.display === "flex" ? "none" : "flex";
+}
+
 async function loadPrompts() {
     try {
         const response = await fetch('prompts.json');
@@ -49,9 +54,9 @@ async function showCategory(category) {
 
             promptDiv.appendChild(promptTitle);
             promptDiv.appendChild(promptObjective);
-            promptDiv.appendChild(descriptionBox);
             promptDiv.appendChild(promptInput);
             promptDiv.appendChild(promptOutput);
+            promptDiv.appendChild(descriptionBox);
 
             promptContainer.appendChild(promptDiv);
         });
