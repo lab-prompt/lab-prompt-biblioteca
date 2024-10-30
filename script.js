@@ -4,6 +4,32 @@ function toggleMenu() {
     navMenu.style.display = navMenu.style.display === "flex" ? "none" : "flex";
 }
 
+// Função para obter os filtros selecionados e aplicar os filtros
+function applySelectedFilters() {
+    const selectedTags = [];
+    const selectedOutputs = [];
+
+    // Captura os filtros de tags
+    if (document.getElementById("criatividade").checked) selectedTags.push("Criatividade");
+    if (document.getElementById("musica").checked) selectedTags.push("Música");
+    if (document.getElementById("design").checked) selectedTags.push("Design");
+
+    // Captura os filtros de output
+    if (document.getElementById("texto").checked) selectedOutputs.push("Texto");
+    if (document.getElementById("imagem").checked) selectedOutputs.push("Imagem");
+
+    // Filtra os prompts com base nas tags e outputs selecionados
+    const filteredPrompts = prompts.filter(prompt => {
+        const hasSelectedTag = selectedTags.length === 0 || selectedTags.some(tag => prompt.tags.includes(tag));
+        const hasSelectedOutput = selectedOutputs.length === 0 || selectedOutputs.includes(prompt.output);
+
+        return hasSelectedTag && hasSelectedOutput;
+    });
+
+    // Exibe os prompts filtrados
+    displayPrompts(filteredPrompts);
+}
+
 // Função para exibir os prompts filtrados
 function displayPrompts(promptList) {
     const promptContainer = document.getElementById("promptContainer");
@@ -81,7 +107,5 @@ const prompts = [
     }
 ];
 
-// Carregar os prompts ao carregar a página
-document.addEventListener("DOMContentLoaded", () => {
-    displayPrompts(prompts);
-});
+// Carrega todos os prompts inicialmente
+document.addEventListener("DOMContentLoaded
