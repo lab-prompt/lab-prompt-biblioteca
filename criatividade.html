@@ -8,24 +8,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Cabeçalho com botão de menu -->
     <header>
-        <img src="logo.png" alt="Logo lab.prompt" class="logo">
-        <h1>Categoria: Criatividade</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
     </header>
 
-    <nav class="nav-menu">
+    <!-- Menu em Aba -->
+    <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="criatividade.html" class="nav-link">Criatividade</a>
         <a href="educacional.html" class="nav-link">Educacional</a>
         <a href="produtividade.html" class="nav-link">Produtividade</a>
     </nav>
 
-    <main class="prompt-container" id="promptContainer">
-        <!-- Os prompts de criatividade aparecerão aqui -->
-    </main>
+    <!-- Caixa de conteúdo -->
+    <div class="container">
+        <h1>Categoria: Criatividade</h1>
+        <main class="prompt-container" id="promptContainer">
+            <!-- Prompts carregados por JavaScript -->
+        </main>
+    </div>
 
     <script src="script.js"></script>
     <script>
-        showCategory('criatividade'); // Carrega a categoria "criatividade"
+        // Carrega a categoria "criatividade" ao carregar a página
+        showCategory('criatividade');
     </script>
 </body>
 </html>
