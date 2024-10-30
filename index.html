@@ -3,110 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca de Prompts - lab-prompt</title>
-
-    <!-- Importando as fontes do Google Fonts -->
+    <title>Home - lab.prompt Biblioteca de Prompts</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-
     <style>
-        /* Estilo geral do site com fundo de tecnologia */
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
-            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Textura de linhas sutis */
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
             color: #e0e0e0;
             margin: 0;
             padding: 20px;
         }
 
-        /* Estilo para os títulos */
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            border-radius: 50%;
+        }
+
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            color: #03DAC6; /* Verde neon */
+            color: #03DAC6;
             text-align: center;
         }
 
-        /* Menu de categorias */
-        .category-menu {
+        .nav-menu {
             display: flex;
-            flex-direction: column;
-            width: 200px;
-            background-color: #1f1f1f;
-            padding: 15px;
-            border-radius: 8px;
-            margin-right: 20px;
+            justify-content: center;
+            margin-top: 20px;
         }
 
-        .category {
-            padding: 10px;
-            cursor: pointer;
+        .nav-link {
+            margin: 0 15px;
+            color: #BB86FC;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
             color: #03DAC6;
-            font-weight: bold;
         }
 
-        .category:hover {
-            color: #BB86FC; /* Azul profundo */
-        }
-
-        /* Container de prompts */
-        .prompt-container {
-            flex-grow: 1;
-        }
-
-        /* Estrutura flex */
-        .main-content {
-            display: flex;
-        }
-
-        /* Estilo dos prompts */
-        .prompt {
-            background-color: #1f1f1f;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Estilo para a descrição destacada */
-        .prompt-description {
-            background-color: #282828; /* Cor diferente para destacar */
-            padding: 10px;
-            border-left: 4px solid #BB86FC; /* Azul profundo para destaque */
-            font-style: italic;
-            margin: 15px 0;
-        }
-
-        /* Estilo do botão de copiar */
-        .copy-btn {
-            margin-top: 10px;
-            padding: 8px;
-            background-color: #03DAC6;
-            color: #121212;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Roboto', sans-serif;
-            font-weight: bold;
+        .content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <h1>Biblioteca de Prompts - lab-prompt</h1>
-    <div class="main-content">
-        <!-- Menu de Categorias -->
-        <div class="category-menu" id="categoryMenu">
-            <div class="category" onclick="showCategory('criatividade')">Criatividade</div>
-            <div class="category" onclick="showCategory('educacional')">Educacional</div>
-            <div class="category" onclick="showCategory('produtividade')">Produtividade</div>
-        </div>
+    <!-- Inserção da logo -->
+    <img src="logo.png" alt="Logo lab.prompt" class="logo">
 
-        <!-- Container de Prompts -->
-        <div class="prompt-container" id="promptContainer">
-            <!-- Os prompts aparecerão aqui -->
-        </div>
+    <h1>Bem-vindo ao lab.prompt</h1>
+
+    <div class="nav-menu">
+        <a href="criatividade.html" class="nav-link">Criatividade</a>
+        <a href="educacional.html" class="nav-link">Educacional</a>
+        <a href="produtividade.html" class="nav-link">Produtividade</a>
     </div>
 
-    <script src="script.js"></script>
+    <div class="content">
+        <p>O <strong>lab.prompt</strong> é uma biblioteca dedicada a fornecer prompts criativos e educacionais para gerar novas ideias e inspirar o aprendizado. Explore nossas categorias para encontrar prompts nas áreas de criatividade, produtividade, educação e muito mais!</p>
+    </div>
 </body>
 </html>
