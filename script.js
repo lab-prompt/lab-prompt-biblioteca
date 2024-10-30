@@ -67,6 +67,21 @@ async function showCategory(category) {
 
 function copyPrompt(text) {
     navigator.clipboard.writeText(text)
-        .then(() => alert("Descrição copiada!"))
+        .then(() => {
+            const feedback = document.createElement("div");
+            feedback.classList.add("feedback");
+            feedback.textContent = "Descrição copiada!";
+
+            // Adiciona o balão ao lado do botão
+            const button = event.target;
+            button.parentElement.appendChild(feedback);
+            feedback.style.display = "inline-block";
+
+            // Remove o balão após 2 segundos
+            setTimeout(() => {
+                feedback.style.display = "none";
+                feedback.remove();
+            }, 2000);
+        })
         .catch(err => console.error("Erro ao copiar:", err));
 }
