@@ -68,16 +68,17 @@ async function showCategory(category) {
 function copyPrompt(text) {
     navigator.clipboard.writeText(text)
         .then(() => {
+            // Criar o balão de feedback
             const feedback = document.createElement("div");
             feedback.classList.add("feedback");
             feedback.textContent = "Descrição copiada!";
 
-            // Adiciona o balão ao lado do botão
+            // Adicionar o balão ao botão e exibi-lo
             const button = event.target;
             button.parentElement.appendChild(feedback);
-            feedback.style.display = "inline-block";
+            feedback.style.display = "block";
 
-            // Remove o balão após 2 segundos
+            // Remover o balão após 2 segundos
             setTimeout(() => {
                 feedback.style.display = "none";
                 feedback.remove();
