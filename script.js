@@ -9,11 +9,11 @@ async function loadPrompts() {
     }
 }
 
-// Exibe a categoria selecionada
+// Exibe prompts de uma categoria específica
 async function showCategory(category) {
     const data = await loadPrompts();
     const promptContainer = document.getElementById("promptContainer");
-    promptContainer.innerHTML = ""; // Limpa os prompts anteriores
+    promptContainer.innerHTML = "";
 
     if (data && data[category]) {
         data[category].forEach(prompt => {
@@ -23,7 +23,6 @@ async function showCategory(category) {
             const promptTitle = document.createElement("h3");
             promptTitle.textContent = prompt.nome;
 
-            // Destaca a descrição como uma citação
             const promptDescription = document.createElement("blockquote");
             promptDescription.classList.add("prompt-description");
             promptDescription.textContent = prompt.descricao;
@@ -37,7 +36,6 @@ async function showCategory(category) {
             const promptObjective = document.createElement("p");
             promptObjective.innerHTML = `<strong>Objetivo:</strong> ${prompt.objetivo}`;
 
-            // Botão de copiar apenas a descrição
             const copyBtn = document.createElement("button");
             copyBtn.textContent = "Copiar Descrição";
             copyBtn.classList.add("copy-btn");
@@ -57,14 +55,9 @@ async function showCategory(category) {
     }
 }
 
-// Função para copiar o texto da descrição
+// Função para copiar apenas a descrição
 function copyPrompt(text) {
     navigator.clipboard.writeText(text)
         .then(() => alert("Descrição copiada!"))
         .catch(err => console.error("Erro ao copiar:", err));
 }
-
-// Exibe a primeira categoria por padrão
-document.addEventListener("DOMContentLoaded", () => {
-    showCategory("criatividade");
-});
