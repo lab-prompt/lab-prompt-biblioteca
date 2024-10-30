@@ -1,5 +1,5 @@
+/* Estilo geral do corpo */
 body {
-    display: flex;
     font-family: 'Roboto', sans-serif;
     background: url('background.png') no-repeat center center fixed;
     background-size: cover;
@@ -8,12 +8,17 @@ body {
     padding: 0;
 }
 
+/* Cabeçalho fixo no topo */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #282828;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .home-link {
@@ -33,12 +38,12 @@ header {
     font-weight: bold;
 }
 
-/* Menu em Aba */
+/* Menu em Aba Retrátil */
 .nav-menu {
-    display: none;
+    display: none; /* Escondido por padrão */
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 50px; /* Ajustado para aparecer abaixo do cabeçalho */
     right: 20px;
     background-color: rgba(30, 30, 30, 0.9);
     width: 150px;
@@ -59,15 +64,17 @@ header {
     background-color: #BB86FC;
 }
 
+/* Container principal com margem para não ser coberto pelo cabeçalho */
 .container {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 80px auto 0 auto; /* Ajusta para compensar o cabeçalho fixo */
     padding: 20px;
     background-color: rgba(30, 30, 30, 0.85);
     border-radius: 10px;
     color: #e0e0e0;
 }
 
+/* Estilo de cada prompt */
 .prompt {
     background-color: #1f1f1f;
     border: 1px solid #BB86FC;
@@ -86,12 +93,20 @@ header {
     margin: 10px 0;
 }
 
+/* Estilo para a seção Output e Exemplo */
+.prompt-output,
+.prompt-example {
+    margin: 10px 0;
+}
+
+/* Caixa da descrição com botão de cópia */
 .description-box {
     display: flex;
     align-items: center;
     background-color: #282828;
     border-radius: 8px;
     padding: 10px;
+    margin: 10px 0;
 }
 
 .prompt-description {
@@ -99,19 +114,19 @@ header {
     font-style: italic;
 }
 
-/* Posição relativa para o botão */
 .copy-btn {
-    position: relative;
+    margin-left: 10px;
+    padding: 8px 12px;
     background-color: #03DAC6;
     color: #121212;
-    padding: 8px 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    position: relative;
 }
 
-/* Estilo do balão de feedback */
+/* Balão de feedback */
 .feedback {
     display: none;
     position: absolute;
@@ -127,3 +142,7 @@ header {
     z-index: 1000;
 }
 
+/* Exibição do balão de feedback */
+.copy-btn:active .feedback {
+    display: inline-block;
+}
