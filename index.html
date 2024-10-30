@@ -8,25 +8,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Cabeçalho com botão de menu e ícone de Home -->
     <header>
+        <a href="index.html" class="home-link"><span>🏠</span> Home</a>
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
     </header>
 
-    <nav class="nav-menu" id="navMenu">
+    <!-- Menu em Aba Retrátil -->
+    <nav class="nav-menu" id="navMenu" style="display: none;">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="criatividade.html" class="nav-link">Criatividade</a>
-        <a href="educacional.html" class="nav-link">Educacional</a>
-        <a href="produtividade.html" class="nav-link">Produtividade</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="dicas.html" class="nav-link">Dicas</a>
+        <div class="submenu">
+            <a href="#" class="nav-link">Prompts</a>
+            <a href="chatgpt.html" class="sub-nav-link">ChatGPT</a>
+        </div>
     </nav>
 
+    <!-- Conteúdo Principal -->
     <div class="container">
         <h1>Bem-vindo ao lab.prompt</h1>
         <main class="content">
-    <h2>Sobre o lab.prompt</h2>
-    <p>
-        O <strong>lab.prompt</strong> é uma biblioteca de prompts projetada para inspirar criatividade, produtividade e aprendizado. Com coleções cuidadosamente categorizadas, o <strong>lab.prompt</strong> oferece ideias inovadoras e ferramentas práticas para desbloquear seu potencial em diversas áreas. Seja para projetos criativos, estudos, desenvolvimento de habilidades ou organização pessoal, cada prompt é pensado para estimular reflexões e transformar desafios em oportunidades. Explore as categorias e descubra um universo de possibilidades com um simples clique, tudo ao alcance de sua curiosidade e imaginação.
-    </p>
-</div>
+            <h2>Sobre o lab.prompt</h2>
+            <p>
+                O <strong>lab.prompt</strong> é uma biblioteca de prompts projetada para inspirar criatividade, produtividade e aprendizado. Com coleções cuidadosamente categorizadas, o <strong>lab.prompt</strong> oferece ideias inovadoras e ferramentas práticas para desbloquear seu potencial em diversas áreas. Seja para projetos criativos, estudos, desenvolvimento de habilidades ou organização pessoal, cada prompt é pensado para estimular reflexões e transformar desafios em oportunidades. Explore as categorias e descubra um universo de possibilidades com um simples clique, tudo ao alcance de sua curiosidade e imaginação.
+            </p>
+        </main>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
