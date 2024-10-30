@@ -31,12 +31,7 @@ async function showCategory(category) {
             promptObjective.classList.add("prompt-objective");
             promptObjective.innerHTML = `<strong>Objetivo:</strong> ${prompt.objetivo}`;
 
-            const promptInput = document.createElement("p");
-            promptInput.innerHTML = `<strong>Input:</strong> ${prompt.input}`;
-
-            const promptOutput = document.createElement("p");
-            promptOutput.innerHTML = `<strong>Output:</strong> ${prompt.output}`;
-
+            // Description box with the copy button
             const descriptionBox = document.createElement("div");
             descriptionBox.classList.add("description-box");
 
@@ -52,11 +47,18 @@ async function showCategory(category) {
             descriptionBox.appendChild(promptDescription);
             descriptionBox.appendChild(copyBtn);
 
+            const promptInput = document.createElement("p");
+            promptInput.innerHTML = `<strong>Input:</strong> ${prompt.input}`;
+
+            const promptOutput = document.createElement("p");
+            promptOutput.innerHTML = `<strong>Output:</strong> ${prompt.output}`;
+
+            // Append elements in the desired order
             promptDiv.appendChild(promptTitle);
             promptDiv.appendChild(promptObjective);
+            promptDiv.appendChild(descriptionBox); // Description box now comes before input
             promptDiv.appendChild(promptInput);
             promptDiv.appendChild(promptOutput);
-            promptDiv.appendChild(descriptionBox);
 
             promptContainer.appendChild(promptDiv);
         });
