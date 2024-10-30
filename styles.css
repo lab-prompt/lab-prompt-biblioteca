@@ -12,19 +12,17 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-}
-
-.logo {
-    width: 80px;
+    background-color: #282828; /* Fundo escuro para destaque */
 }
 
 .menu-toggle {
-    background-color: #03DAC6;
-    color: #121212;
+    background-color: #BB86FC; /* Azul profundo para melhor contraste */
+    color: #FFFFFF;
     padding: 8px 12px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .nav-menu {
