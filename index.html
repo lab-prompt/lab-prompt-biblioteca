@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - lab.prompt Biblioteca de Prompts</title>
+    <title>lab.prompt Biblioteca de Prompts</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <img src="logo.png" alt="Logo lab.prompt" class="logo">
-        <h1>Bem-vindo ao lab.prompt</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
     </header>
 
-    <nav class="nav-menu">
+    <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
         <a href="criatividade.html" class="nav-link">Criatividade</a>
         <a href="educacional.html" class="nav-link">Educacional</a>
         <a href="produtividade.html" class="nav-link">Produtividade</a>
     </nav>
 
-    <main class="content">
-        <section>
-            <p>O <strong>lab.prompt</strong> é uma biblioteca dedicada a fornecer prompts criativos e educacionais para gerar novas ideias e inspirar o aprendizado. Explore nossas categorias para encontrar prompts nas áreas de criatividade, produtividade, educação e muito mais!</p>
-        </section>
-    </main>
+    <div class="container">
+        <h1>Bem-vindo ao lab.prompt</h1>
+        <main class="content">
+            <p>Descrição da biblioteca lab.prompt...</p>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
