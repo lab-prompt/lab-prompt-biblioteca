@@ -1,3 +1,9 @@
+// Função para alternar a visibilidade do menu
+function toggleMenu() {
+    const navMenu = document.getElementById("navMenu");
+    navMenu.style.display = navMenu.style.display === "flex" ? "none" : "flex";
+}
+
 // Função para exibir os prompts filtrados
 function displayPrompts(promptList) {
     const promptContainer = document.getElementById("promptContainer");
@@ -46,9 +52,36 @@ function displayPrompts(promptList) {
     });
 }
 
-// Função de copiar
+// Função para copiar a descrição do prompt
 function copyPrompt(text) {
     navigator.clipboard.writeText(text)
         .then(() => alert("Descrição copiada!"))
         .catch(err => console.error("Erro ao copiar:", err));
 }
+
+// Dados de exemplo (substitua pelo carregamento do JSON ou API)
+const prompts = [
+    {
+        "id": 1,
+        "nome": "Letra de Música Personalizada",
+        "descricao": "Crie uma letra de música para o tema: {tema}. Gênero: {gênero musical}. Sentimentos: {sentimentos que deseja transmitir}.",
+        "objetivo": "Desenvolver habilidades de escrita musical.",
+        "output": ["Texto"],
+        "exemplo": "Tema: Amizade, Gênero: Pop, Sentimentos: Felicidade e Nostalgia",
+        "tags": ["Criatividade", "Música", "Escrita"]
+    },
+    {
+        "id": 2,
+        "nome": "Design de Capa para Música",
+        "descricao": "Crie uma capa de música no estilo: {estilo}. Descrição detalhada: {descrição}, Tamanho: {tamanho}.",
+        "objetivo": "Criar uma arte visual que represente a música.",
+        "output": ["Imagem", "Texto"],
+        "exemplo": "Estilo: Vintage, Descrição: Uma capa que remete aos anos 80, Tamanho: 3000x3000 pixels",
+        "tags": ["Criatividade", "Música", "Design"]
+    }
+];
+
+// Carregar os prompts ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    displayPrompts(prompts);
+});
