@@ -16,41 +16,47 @@ header {
     background-color: #282828;
 }
 
-.menu-toggle, .home-link {
-    color: #03DAC6;
+.home-link {
     text-decoration: none;
+    color: #03DAC6;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.menu-toggle {
+    background-color: #03DAC6;
+    color: #121212;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
     font-weight: bold;
 }
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: rgba(30, 30, 30, 0.9);
-    padding: 20px;
-    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.4);
-    color: #e0e0e0;
-}
-
-.container {
-    margin-left: 220px;
-    padding: 20px;
-}
-
-.prompt-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.sub-menu {
+/* Menu em Aba */
+.nav-menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(30, 30, 30, 0.9);
+    width: 150px;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1000;
 }
 
-.nav-link:hover + .sub-menu {
-    display: block;
+.nav-link, .sub-nav-link {
+    color: #FFFFFF;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-link:hover, .sub-nav-link:hover {
+    color: #121212;
+    background-color: #BB86FC;
 }
 
 .container {
