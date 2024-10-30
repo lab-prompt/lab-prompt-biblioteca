@@ -3,61 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompts - ChatGPT</title>
+    <title>lab.prompt Biblioteca de Prompts - ChatGPT</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho com link de Home e botão de Menu -->
     <header>
-        <a href="index.html" class="home-link"><span>🏠</span> Home</a>
-        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+        <nav class="main-nav">
+            <a href="index.html" class="home-link">Home</a>
+            <a href="#" class="menu-toggle" onclick="toggleMenu()">Menu</a>
+            <div class="nav-menu" id="navMenu" style="display: none;">
+                <a href="sobre.html" class="nav-link">Sobre</a>
+                <a href="dicas.html" class="nav-link">Dicas</a>
+                <div class="submenu">
+                    <a href="#" class="nav-link">Prompts</a>
+                    <div class="dropdown">
+                        <a href="chatgpt.html" class="sub-nav-link">ChatGPT</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Menu em Aba -->
-    <nav class="nav-menu" id="navMenu">
-        <a href="#" class="nav-link">Sobre</a>
-        <a href="#" class="nav-link">Dicas</a>
-        <a href="#" class="nav-link">Prompts</a>
-        <div class="sub-menu">
-            <a href="chatgpt.html" class="nav-link">ChatGPT</a>
-        </div>
-    </nav>
+    <!-- Container Principal da Página de Prompts -->
+    <div class="container">
+        <h1>Prompts para ChatGPT</h1>
+        <main class="content" id="promptContainer">
+            <!-- Os prompts carregados dinamicamente aparecerão aqui -->
+        </main>
+    </div>
 
-    <!-- Barra Lateral de Filtros -->
-    <aside class="sidebar">
+    <!-- Container de Filtros (apenas nas páginas de Prompts) -->
+    <div class="filter-container">
         <h3>Filtros de Tags</h3>
-        <div class="filter-group">
-            <input type="checkbox" id="criatividade" onclick="filterByTag('Criatividade')">
-            <label for="criatividade">Criatividade</label><br>
-            <input type="checkbox" id="musica" onclick="filterByTag('Música')">
-            <label for="musica">Música</label><br>
-            <input type="checkbox" id="design" onclick="filterByTag('Design')">
-            <label for="design">Design</label>
-        </div>
+        <input type="checkbox" id="criatividade" value="Criatividade"> <label for="criatividade">Criatividade</label><br>
+        <input type="checkbox" id="musica" value="Música"> <label for="musica">Música</label><br>
+        <input type="checkbox" id="design" value="Design"> <label for="design">Design</label><br>
 
         <h3>Filtros de Output</h3>
-        <div class="filter-group">
-            <input type="checkbox" id="texto" onclick="filterByOutput('Texto')">
-            <label for="texto">Texto</label><br>
-            <input type="checkbox" id="imagem" onclick="filterByOutput('Imagem')">
-            <label for="imagem">Imagem</label><br>
-            <!-- Inclua mais opções conforme necessário -->
-        </div>
-    </aside>
+        <input type="checkbox" id="texto" value="Texto"> <label for="texto">Texto</label><br>
+        <input type="checkbox" id="imagem" value="Imagem"> <label for="imagem">Imagem</label><br>
 
-    <!-- Caixa de Conteúdo -->
-    <main class="container">
-        <h1>Prompts para ChatGPT</h1>
-        <section class="prompt-container" id="promptContainer">
-            <!-- Prompts carregados por JavaScript -->
-        </section>
-    </main>
+        <!-- Botão para aplicar os filtros -->
+        <button class="apply-filters-btn" onclick="applySelectedFilters()">Aplicar Filtros</button>
+    </div>
 
     <script src="script.js"></script>
-    <script>
-        // Carregar prompts com as tags e filtros de output
-        displayPrompts(prompts);
-    </script>
 </body>
 </html>
