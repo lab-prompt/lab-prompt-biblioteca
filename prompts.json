@@ -1,0 +1,36 @@
+{
+    "criatividade": [
+        {
+            "nome": "Mundo com Asas",
+            "descricao": "Descreva um mundo onde todos os seres humanos possuem asas.",
+            "input": "Tema: Humanos com Asas",
+            "output": "Descrição detalhada de um mundo com pessoas que têm asas.",
+            "objetivo": "Explorar possibilidades imaginativas e desenvolver a criatividade."
+        },
+        {
+            "nome": "Conversa Natural",
+            "descricao": "Imagine uma conversa entre uma árvore e uma montanha.",
+            "input": "Personagens: Árvore e Montanha",
+            "output": "Diálogo criativo entre os personagens naturais.",
+            "objetivo": "Desenvolver habilidades de diálogo e explorar temas da natureza."
+        }
+    ],
+    "educacional": [
+        {
+            "nome": "Teoria da Relatividade",
+            "descricao": "Explique a teoria da relatividade de forma simples.",
+            "input": "Tema: Teoria da Relatividade",
+            "output": "Explicação simplificada da teoria da relatividade.",
+            "objetivo": "Facilitar o entendimento de conceitos complexos de física."
+        }
+    ],
+    "produtividade": [
+        {
+            "nome": "Plano de Estudos de 30 Dias",
+            "descricao": "Crie um plano de estudos para aprender uma nova habilidade em 30 dias.",
+            "input": "Objetivo: Aprender uma nova habilidade",
+            "output": "Plano de estudos detalhado para o período de 30 dias.",
+            "objetivo": "Aprimorar a organização e o planejamento pessoal."
+        }
+    ]
+}
