@@ -171,12 +171,12 @@ header {
     display: inline-block;
 }
 
-/* Container de filtros com botão de aplicar */
+/* Container de filtros abaixo do cabeçalho */
 .filter-container {
     max-width: 800px;
     margin: 20px auto;
     padding: 15px;
-    background-color: rgba(50, 50, 50, 0.9); /* Cor combinando com o fundo principal */
+    background-color: rgba(50, 50, 50, 0.9);
     border-radius: 10px;
 }
 
@@ -190,4 +190,19 @@ header {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+}
+
+/* Balão de feedback ao copiar */
+.feedback {
+    display: none;
+    position: absolute;
+    top: -25px;
+    right: 0;
+    background-color: #03DAC6;
+    color: #121212;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    z-index: 1000;
 }
