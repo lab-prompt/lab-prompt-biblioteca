@@ -26,15 +26,7 @@
         </nav>
     </header>
 
-    <!-- Container Principal da Página de Prompts -->
-    <div class="container">
-        <h1>Prompts para ChatGPT</h1>
-        <main class="content" id="promptContainer">
-            <!-- Os prompts carregados dinamicamente aparecerão aqui -->
-        </main>
-    </div>
-
-    <!-- Container de Filtros (apenas nas páginas de Prompts) -->
+    <!-- Container de Filtros entre o Cabeçalho e o Corpo -->
     <div class="filter-container">
         <h3>Filtros de Tags</h3>
         <input type="checkbox" id="criatividade" value="Criatividade"> <label for="criatividade">Criatividade</label><br>
@@ -47,6 +39,14 @@
 
         <!-- Botão para aplicar os filtros -->
         <button class="apply-filters-btn" onclick="applySelectedFilters()">Aplicar Filtros</button>
+    </div>
+
+    <!-- Container Principal da Página de Prompts -->
+    <div class="container">
+        <h1>Prompts para ChatGPT</h1>
+        <main class="content" id="promptContainer">
+            <!-- Os prompts carregados dinamicamente aparecerão aqui -->
+        </main>
     </div>
 
     <script src="script.js"></script>
