@@ -8,28 +8,36 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
-            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+            background: #121212; /* Carvão escuro de fundo */
+            background-image: 
+                linear-gradient(135deg, rgba(3, 218, 198, 0.1) 25%, transparent 25%),
+                linear-gradient(225deg, rgba(3, 218, 198, 0.1) 25%, transparent 25%),
+                linear-gradient(45deg, rgba(187, 134, 252, 0.1) 25%, transparent 25%),
+                linear-gradient(315deg, rgba(187, 134, 252, 0.1) 25%, #121212 25%);
+            background-size: 40px 40px; /* Tamanho do padrão */
             color: #e0e0e0;
             margin: 0;
             padding: 20px;
         }
 
+        /* Logo centralizada */
         .logo {
             display: block;
             margin: 0 auto 20px;
-            width: 100px; /* Ajuste o tamanho conforme necessário */
+            width: 100px;
             height: auto;
             border-radius: 50%;
         }
 
+        /* Título com destaque */
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            color: #03DAC6;
+            color: #03DAC6; /* Verde neon */
             text-align: center;
         }
 
+        /* Menu de navegação */
         .nav-menu {
             display: flex;
             justify-content: center;
@@ -38,15 +46,16 @@
 
         .nav-link {
             margin: 0 15px;
-            color: #BB86FC;
+            color: #BB86FC; /* Azul profundo */
             text-decoration: none;
             font-weight: bold;
         }
 
         .nav-link:hover {
-            color: #03DAC6;
+            color: #03DAC6; /* Verde neon */
         }
 
+        /* Conteúdo centralizado */
         .content {
             text-align: center;
             max-width: 600px;
@@ -55,7 +64,6 @@
     </style>
 </head>
 <body>
-    <!-- Inserção da logo -->
     <img src="logo.png" alt="Logo lab.prompt" class="logo">
 
     <h1>Bem-vindo ao lab.prompt</h1>
