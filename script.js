@@ -1,47 +1,4 @@
-const prompts = [
-    {
-        "id": 1,
-        "nome": "Letra de Música Personalizada",
-        "descricao": "Crie uma letra de música para o tema: {tema}. Inclua o gênero musical: {gênero} e os sentimentos que deseja transmitir: {sentimentos}.",
-        "objetivo": "Desenvolver habilidades de escrita musical.",
-        "input": "Tema: {tema}, Gênero: {gênero}, Sentimentos: {sentimentos}",
-        "output": "Texto",
-        "tags": ["Criatividade", "Música", "Escrita"]
-    },
-    {
-        "id": 2,
-        "nome": "Design de Capa para Música",
-        "descricao": "Crie uma capa de música no estilo: {estilo}. Descrição detalhada: {descrição}, Tamanho: {tamanho}",
-        "objetivo": "Criar uma arte visual que represente a música.",
-        "input": "Estilo: {estilo}, Descrição: {descrição}, Tamanho: {tamanho}",
-        "output": "Imagem",
-        "tags": ["Criatividade", "Música", "Design"]
-    }
-];
-
-// Filtros de tags e output
-let selectedTags = new Set();
-let selectedOutputs = new Set();
-
-function filterByTag(tag) {
-    selectedTags.has(tag) ? selectedTags.delete(tag) : selectedTags.add(tag);
-    applyFilters();
-}
-
-function filterByOutput(output) {
-    selectedOutputs.has(output) ? selectedOutputs.delete(output) : selectedOutputs.add(output);
-    applyFilters();
-}
-
-function applyFilters() {
-    const filteredPrompts = prompts.filter(prompt => {
-        const hasTag = Array.from(selectedTags).every(tag => prompt.tags.includes(tag));
-        const hasOutput = selectedOutputs.size === 0 || selectedOutputs.has(prompt.output);
-        return hasTag && hasOutput;
-    });
-    displayPrompts(filteredPrompts);
-}
-
+// Função para exibir os prompts filtrados
 function displayPrompts(promptList) {
     const promptContainer = document.getElementById("promptContainer");
     promptContainer.innerHTML = "";
@@ -58,6 +15,9 @@ function displayPrompts(promptList) {
         promptObjective.classList.add("prompt-objective");
         promptObjective.innerHTML = `<strong>Objetivo:</strong> ${prompt.objetivo}`;
 
+        const promptOutput = document.createElement("p");
+        promptOutput.innerHTML = `<strong>Output:</strong> ${prompt.output.join(", ")}`;
+
         const descriptionBox = document.createElement("div");
         descriptionBox.classList.add("description-box");
 
@@ -73,24 +33,22 @@ function displayPrompts(promptList) {
         descriptionBox.appendChild(promptDescription);
         descriptionBox.appendChild(copyBtn);
 
-        const promptInput = document.createElement("p");
-        promptInput.innerHTML = `<strong>Input:</strong> ${prompt.input}`;
+        const promptExample = document.createElement("p");
+        promptExample.innerHTML = `<strong>Exemplo de Input:</strong> ${prompt.exemplo}`;
 
         promptDiv.appendChild(promptTitle);
         promptDiv.appendChild(promptObjective);
+        promptDiv.appendChild(promptOutput);
         promptDiv.appendChild(descriptionBox);
-        promptDiv.appendChild(promptInput);
+        promptDiv.appendChild(promptExample);
 
         promptContainer.appendChild(promptDiv);
     });
 }
 
+// Função de copiar
 function copyPrompt(text) {
     navigator.clipboard.writeText(text)
         .then(() => alert("Descrição copiada!"))
         .catch(err => console.error("Erro ao copiar:", err));
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    displayPrompts(prompts);
-});
