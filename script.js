@@ -49,9 +49,9 @@ async function showCategory(category) {
 
             promptDiv.appendChild(promptTitle);
             promptDiv.appendChild(promptObjective);
+            promptDiv.appendChild(descriptionBox);
             promptDiv.appendChild(promptInput);
             promptDiv.appendChild(promptOutput);
-            promptDiv.appendChild(descriptionBox);
 
             promptContainer.appendChild(promptDiv);
         });
