@@ -9,14 +9,14 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px 20px;
-    background-color: #282828; /* Fundo escuro para destaque */
+    background-color: #282828;
 }
 
 .menu-toggle {
-    background-color: #BB86FC; /* Azul profundo para melhor contraste */
+    background-color: #BB86FC;
     color: #FFFFFF;
     padding: 8px 12px;
     border: none;
@@ -28,12 +28,14 @@ header {
 .nav-menu {
     display: none;
     flex-direction: column;
-    background-color: rgba(30, 30, 30, 0.9);
     position: absolute;
     top: 60px;
-    width: 200px;
+    left: 20px;
+    background-color: rgba(30, 30, 30, 0.9);
+    width: 150px;
     border-radius: 8px;
     padding: 10px;
+    z-index: 1000;
 }
 
 .nav-link {
