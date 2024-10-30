@@ -21,7 +21,7 @@ function applySelectedFilters() {
     // Filtra os prompts com base nas tags e outputs selecionados
     const filteredPrompts = prompts.filter(prompt => {
         const hasSelectedTag = selectedTags.length === 0 || selectedTags.some(tag => prompt.tags.includes(tag));
-        const hasSelectedOutput = selectedOutputs.length === 0 || selectedOutputs.includes(prompt.output);
+        const hasSelectedOutput = selectedOutputs.length === 0 || selectedOutputs.some(output => prompt.output.includes(output));
 
         return hasSelectedTag && hasSelectedOutput;
     });
@@ -85,27 +85,16 @@ function copyPrompt(text) {
         .catch(err => console.error("Erro ao copiar:", err));
 }
 
-// Dados de exemplo (substitua pelo carregamento do JSON ou API)
-const prompts = [
-    {
-        "id": 1,
-        "nome": "Letra de Música Personalizada",
-        "descricao": "Crie uma letra de música para o tema: {tema}. Gênero: {gênero musical}. Sentimentos: {sentimentos que deseja transmitir}.",
-        "objetivo": "Desenvolver habilidades de escrita musical.",
-        "output": ["Texto"],
-        "exemplo": "Tema: Amizade, Gênero: Pop, Sentimentos: Felicidade e Nostalgia",
-        "tags": ["Criatividade", "Música", "Escrita"]
-    },
-    {
-        "id": 2,
-        "nome": "Design de Capa para Música",
-        "descricao": "Crie uma capa de música no estilo: {estilo}. Descrição detalhada: {descrição}, Tamanho: {tamanho}.",
-        "objetivo": "Criar uma arte visual que represente a música.",
-        "output": ["Imagem", "Texto"],
-        "exemplo": "Estilo: Vintage, Descrição: Uma capa que remete aos anos 80, Tamanho: 3000x3000 pixels",
-        "tags": ["Criatividade", "Música", "Design"]
-    }
-];
+// Função para carregar prompts do JSON
+function loadPrompts() {
+    fetch('prompts.json')
+        .then(response => response.json())
+        .then(data => {
+            prompts = data;  // Atualiza a variável global `prompts` com os dados do JSON
+            displayPrompts(prompts);  // Exibe os prompts ao carregar a página
+        })
+        .catch(error => console.error("Erro ao carregar prompts:", error));
+}
 
-// Carrega todos os prompts inicialmente
-document.addEventListener("DOMContentLoaded
+// Carrega os prompts do JSON ao carregar a página
+document.addEventListener("DOMContentLoaded", loadPrompts);
