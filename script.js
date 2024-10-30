@@ -60,7 +60,13 @@ function displayPrompts(promptList) {
         const copyBtn = document.createElement("button");
         copyBtn.textContent = "Copiar Descrição";
         copyBtn.classList.add("copy-btn");
-        copyBtn.onclick = () => copyPrompt(prompt.descricao);
+        copyBtn.onclick = () => copyPrompt(prompt.descricao, copyBtn);
+
+        // Balão de feedback
+        const feedback = document.createElement("span");
+        feedback.classList.add("feedback");
+        feedback.textContent = "Descrição copiada!";
+        descriptionBox.appendChild(feedback);
 
         descriptionBox.appendChild(promptDescription);
         descriptionBox.appendChild(copyBtn);
@@ -78,10 +84,19 @@ function displayPrompts(promptList) {
     });
 }
 
-// Função para copiar a descrição do prompt
-function copyPrompt(text) {
+// Função para copiar a descrição do prompt e exibir o balão de feedback
+function copyPrompt(text, button) {
     navigator.clipboard.writeText(text)
-        .then(() => alert("Descrição copiada!"))
+        .then(() => {
+            // Exibe o balão de feedback
+            const feedback = button.nextElementSibling;
+            feedback.style.display = "inline-block";
+            
+            // Esconde o balão após 2 segundos
+            setTimeout(() => {
+                feedback.style.display = "none";
+            }, 2000);
+        })
         .catch(err => console.error("Erro ao copiar:", err));
 }
 
