@@ -47,9 +47,6 @@ function displayPrompts(promptList) {
         promptObjective.classList.add("prompt-objective");
         promptObjective.innerHTML = `<strong>Objetivo:</strong> ${prompt.objetivo}`;
 
-        const promptOutput = document.createElement("p");
-        promptOutput.innerHTML = `<strong>Output:</strong> ${prompt.output.join(", ")}`;
-
         const descriptionBox = document.createElement("div");
         descriptionBox.classList.add("description-box");
 
@@ -72,13 +69,16 @@ function displayPrompts(promptList) {
         descriptionBox.appendChild(copyBtn);
 
         const promptExample = document.createElement("p");
-        promptExample.innerHTML = `<strong>Exemplo de Input:</strong> ${prompt.exemplo}`;
+        promptExample.innerHTML = `<strong>Exemplo:</strong> ${prompt.exemplo}`;
+
+        const promptOutput = document.createElement("p");
+        promptOutput.innerHTML = `<strong>Output:</strong> ${prompt.output.join(", ")}`;
 
         promptDiv.appendChild(promptTitle);
         promptDiv.appendChild(promptObjective);
-        promptDiv.appendChild(promptOutput);
         promptDiv.appendChild(descriptionBox);
         promptDiv.appendChild(promptExample);
+        promptDiv.appendChild(promptOutput);
 
         promptContainer.appendChild(promptDiv);
     });
